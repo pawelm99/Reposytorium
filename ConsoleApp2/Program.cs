@@ -48,9 +48,10 @@ namespace ConsoleApp2
 
                     var z = (wynik) switch
                     {
+                        (0) => MiejscaZ.Brak,
                         (1) => MiejscaZ.Jedno,
                         (2) => MiejscaZ.Dwa,
-                        (0) => MiejscaZ.Brak,
+                        
                     };
                     
                     Console.WriteLine("Liczba miejsc zerowych: {0}", z);
