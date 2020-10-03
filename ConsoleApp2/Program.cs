@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Zjazd2
+namespace ConsoleApp2
 {
    
     class Program
