@@ -15,8 +15,14 @@ int main()
 	
 	H.edit_x(3);
 	H.edit_y(3);
-	
+
+	if (H.get_x() == Z.get_y())
+	{
+		cout << "Dopadl cie \n";
+	}
 	cout << H;
 	cout << Z;
+
+
 }
 
