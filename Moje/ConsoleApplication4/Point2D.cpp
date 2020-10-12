@@ -1,9 +1,9 @@
 #include <iostream>
-#include "Point.h"
+#include "Point2D.h"
 
 using namespace std;
 
-namespace Point
+namespace Point2DClass
 {
 
 //Konstruktory,Destruktory

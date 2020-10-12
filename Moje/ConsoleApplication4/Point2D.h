@@ -3,7 +3,7 @@
 
 using namespace std;
 
-namespace Point
+namespace Point2DClass
 {
 	class Point2D
 	{

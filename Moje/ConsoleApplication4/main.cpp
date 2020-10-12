@@ -1,53 +1,17 @@
 ﻿#include <iostream>
-#include "Point.h"
+#include "Point2D.h"
+#include "Human.h"
+#include "Zombie.h"
 
 using namespace std;
-using Point::Point2D;
-
-class Human :public Point2D
-{
-	
-public:
-	Human();
-	~Human();
-
-	
-private:
-
-};
-
-//Konstruktory,Destruktory
-Human::Human()
-{
-}
-Human::~Human()
-{
-}
-
-class Zombi :public Point2D
-{
-public:
-	Zombi();
-	~Zombi();
-
-private:
-
-};
-
-//Konstruktory,Destruktory
-Zombi::Zombi()
-{
-}
-Zombi::~Zombi()
-{
-}
-
-
+using Point2DClass::Point2D;
+using HumanClass::Human;
+using ZombieClass::Zombie;
 
 int main()
 {
 	Human H;
-	Zombi Z;
+	Zombie Z;
 	
 	H.edit_x(3);
 	H.edit_y(3);
