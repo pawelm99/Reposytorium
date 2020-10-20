@@ -13,7 +13,7 @@ namespace ConsoleApp1
             Console.WriteLine("Suma: {0}", suma);
             
             TextInfo ti = CultureInfo.CurrentCulture.TextInfo;
-            var tekst1 = (ti.ToTitleCase(Console.ReadLine())).PadRight(6, '.');
+            var tekst1 = (ti.ToTitleCase($"{Console.ReadLine()}."));
             Console.WriteLine(tekst1);            
         }
 
