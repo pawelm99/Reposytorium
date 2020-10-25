@@ -19,8 +19,7 @@ namespace ConsoleApp2
 
         static void Main(string[] args)
         {
-            for (;;)
-            {
+            
                 var liczbaA = Console.ReadLine();
                 var liczbaB = Console.ReadLine();
                 var liczbaC = Console.ReadLine();
@@ -58,14 +57,14 @@ namespace ConsoleApp2
                     }
 
                     Console.WriteLine("Liczba miejsc zerowych: {0}\n{1}", iloscMiejsc,wynik);
-                    break;
+                    
                 }
                 else
                 {
-                    Console.WriteLine("Podales bledne dane spróbuj ponownie");
-                    continue;
+                    Console.WriteLine("Podales bledne dane");
+                    
                 }
-            }
+            
         }
     }
 }
