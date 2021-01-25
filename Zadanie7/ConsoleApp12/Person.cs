@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace ConsoleApp12
 {
@@ -6,8 +7,13 @@ namespace ConsoleApp12
     {
         public int _id;
         public string _name;
-        private int[] LiczbyCałkowite;
+        public int[] LiczbyCałkowite;
 
+
+        public override string ToString()
+        {
+            return $"{nameof(_id)}: {_id}, {nameof(_name)}: {_name}, {nameof(LiczbyCałkowite)}: {LiczbyCałkowite}";
+        }
 
         public Person(int id, string name, int[] liczbyCałkowite)
         {
@@ -16,21 +22,27 @@ namespace ConsoleApp12
             LiczbyCałkowite = liczbyCałkowite;
         }
 
+        
         public object Clone()
         {
-            Person other = (Person) this.MemberwiseClone();
-            return other;
+            int[] tab = new int[LiczbyCałkowite.Length];
+            for (int i = 0; i < tab.Length; i++)
+            {
+                tab[i] = this.LiczbyCałkowite[i];
+            }
+            Person other = new Person(_id, _name, tab);
+           return other;
         }
 
         public Person DeepCopy()
         {
-            Person other = (Person) this.MemberwiseClone();
+            Person other = (Person) MemberwiseClone();
             other.LiczbyCałkowite = LiczbyCałkowite;
             other._name = String.Copy(_name);
             return other;
         }
 
-        public int CompareTo(Person other)
+        /*public int CompareTo(Person other)
         {
             if (other == null)
                 return 1;
@@ -44,9 +56,19 @@ namespace ConsoleApp12
             if (ReferenceEquals(null, other)) return 1;
             var idComparison = _id.CompareTo(other._id);
             if (idComparison != 0) return idComparison;
-            return string.Compare(_name, other._name, StringComparison.Ordinal);*/
-        }
+            return string.Compare(_name, other._name, StringComparison.Ordinal);#1#
+        }*/
+        public int CompareTo(Person comparePart)
+        {
+            // A null value means that this object is greater.
+            if (comparePart == null)
+                return 1;
 
+            else
+
+              return this._name.CompareTo(comparePart._name);
+        }
+       
 
         public void Print()
         {
