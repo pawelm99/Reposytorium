@@ -22,14 +22,12 @@ namespace YouTube
             
             for (int i = 0; i < users.Count; i++)
             {
+                kanal.WyslijPowiadomienie += users[i].WyslijPowiadomienieOFilmie;
                 kanal.OpublikowanoFilm += users[i].SubskrybujKanał;
-                
             }
             kanal.OpublikujFilm(users);
-            
-           
-            
         }
+        
 
         private static List<Uzytkownik> UserGenerate()
         {

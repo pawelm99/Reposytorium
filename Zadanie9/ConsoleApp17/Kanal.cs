@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Channels;
 
 namespace YouTube
 {
@@ -18,6 +19,7 @@ namespace YouTube
         }
 
         public event EventHandler<Kanal> OpublikowanoFilm;
+        public event EventHandler<Kanal> WyslijPowiadomienie;
         
         public void WyswietlFilm(Uzytkownik user)
         {
@@ -29,15 +31,7 @@ namespace YouTube
         public void OpublikujFilm(List<Uzytkownik> uzytkownik)
         {
             OpublikowanoFilm?.Invoke(this, this);
-            WyslijPowiadomienieOFilnie(uzytkownik);
-        }
-
-        private void WyslijPowiadomienieOFilnie(List<Uzytkownik> uzytkownik)
-        {
-            for (int i = 0; i < uzytkownik.Count; i++)
-            {
-                Console.WriteLine($"Uzytkownik {uzytkownik[i].Name} otrzymał powiadomienie o nowym filmie");
-            }
+            WyslijPowiadomienie?.Invoke(this, this);
         }
     }
 }

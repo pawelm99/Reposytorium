@@ -13,12 +13,15 @@ namespace YouTube
         public string Name { get; set; }
         public int Id { get; set; }
 
-        public void SubskrybujKanał(object sender,Kanal kanal)
+        public void SubskrybujKanał(object sender, Kanal kanal)
         {
             kanal.IloscSubow++;
             Console.WriteLine($"{Name} dales suba na kanal '{kanal.Name}' Id kanalu: {kanal.Id}");
-
         }
 
+        public void WyslijPowiadomienieOFilmie(object sender,Kanal kanal)
+        {
+            Console.WriteLine($"Uzytkownik {Name} otrzymał powiadomienie o nowym filmie z kanału : {kanal.Name}");
+        }
     }
 }
