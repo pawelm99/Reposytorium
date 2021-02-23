@@ -4,8 +4,7 @@
     {
         public static string Serialize(this Kanal kanal)
         {
-            return $"Ilosc subow: {kanal.IloscSubow} na kanale: {kanal.Name}, " +
-                   $"Id Kanalu: {kanal.Id} Ilosc wyswietlen: {kanal.LicznikWyswietlen}";
+            return $"Ilsoc subów : {kanal.IloscSubskrypcji}, Id Kanalu: {kanal.Id}, Ilosc wyswietlen wszyskich filmów: {kanal.LicznikWyswietlen}";
         }
     }
 }

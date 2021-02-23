@@ -8,9 +8,10 @@ namespace YouTube
     {
         private Random rnd = new Random();
         public string Name { get; set; }
+        public int IloscSubskrypcji { get; set; }
         public int Id { get; set; }
+        public string FilmName { get; set; }
         public int LicznikWyswietlen { get; set; }
-        public int IloscSubow { get; set; }
 
         public Kanal(string name, int id)
         {
@@ -18,20 +19,22 @@ namespace YouTube
             Id = rnd.Next(100);
         }
 
+    
         public event EventHandler<Kanal> OpublikowanoFilm;
-        public event EventHandler<Kanal> WyslijPowiadomienie;
         
-        public void WyswietlFilm(Uzytkownik user)
+        public void WyswietlFilm(Uzytkownik user,string film)
         {
             
             LicznikWyswietlen ++;
-            Console.WriteLine($"Film zobaczyl {user.Name}");
+            Console.WriteLine($"Film: {film} zobaczyl {user.Name}");
         }
 
-        public void OpublikujFilm(List<Uzytkownik> uzytkownik)
+        public string OpublikujFilm(List<Uzytkownik> uzytkownik)
         {
+            FilmName = $"\"Numer {rnd.Next(1, 100)}\" ";
             OpublikowanoFilm?.Invoke(this, this);
-            WyslijPowiadomienie?.Invoke(this, this);
+            return FilmName;
         }
+
     }
 }
